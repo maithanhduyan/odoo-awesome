@@ -1,0 +1,6 @@
+# Migration runtime data - do not commit
+config.py
+id_map.json
+reports/
+__pycache__/
+*.pyc
