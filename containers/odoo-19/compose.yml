@@ -1,0 +1,28 @@
+services:
+
+  odoo:
+    container_name: odoo_19
+    image: odoo:19.0
+    volumes:
+      - ./addons:/mnt/extra-addons # contain odoo dev modules
+      - ./conf:/etc/odoo # contain config and log
+      - ./web-data:/var/lib/odoo # contain odoo web data
+      - ./log:/var/log/odoo # contain odoo log data
+    ports:
+      - "8018:8069" # web
+      - "8472:8072" # longpolling
+    networks:
+      - odoo_net
+    restart: always
+    # Chờ PostgreSQL container được khởi động
+    external_links:
+      - postgresql:db
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8069", "||", "exit", "1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  odoo_net:
+    external: true
