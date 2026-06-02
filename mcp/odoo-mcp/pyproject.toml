@@ -1,0 +1,9 @@
+[project]
+name = "odoo-mcp"
+version = "0.1.0"
+description = "Odoo MCP Server — CEO Decision Support Agent"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp[cli]>=1.9.0",
+    "httpx>=0.28.0",
+]
