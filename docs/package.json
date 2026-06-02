@@ -1,0 +1,19 @@
+{
+  "name": "odoo-tayafood-migration-docs",
+  "version": "1.0.0",
+  "type": "module",
+
+  "private": true,
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.4",
+    "markdown-it-mathjax3": "^4.3.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
